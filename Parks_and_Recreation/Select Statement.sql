@@ -1,5 +1,6 @@
 -- data manipulation language (DML) command - SELECT
-Select * from parks_and_recreation.employee_demographics; -- we are select the all record from parks_and_recreation<Schema>.employee_demographics<Table>
+Select * 
+from parks_and_recreation.employee_demographics; -- we are select the all record from parks_and_recreation<Schema>.employee_demographics<Table>
 
 SELECT first_name, 
 last_name, 
