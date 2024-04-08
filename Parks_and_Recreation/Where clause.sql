@@ -7,6 +7,10 @@
     >  - Greater than
     >= - Greater than equal to
     != - Not equal to 
+    
+    % Logical Operator %
+    AND
+    OR
 */
 
 Select *
