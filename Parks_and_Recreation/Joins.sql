@@ -24,7 +24,7 @@ from employee_demographics as dem
 join employee_salary as sal
 	on dem.employee_id = sal.employee_id;
     
--- outer join 
+-- Outer joins
 /* Outer joins
 Outer joins are joins that return matched values and unmatched values from either or both tables. 
 There are a few types of outer joins:
@@ -64,3 +64,25 @@ SELECT *
 FROM employee_demographics t1
 RIGHT JOIN employee_salary t2 
 	ON t1.employee_id = t2.employee_id;
+    
+-- Self Joins
+select *
+from employee_salary sal1
+Join employee_salary sal2
+	ON sal1.employee_id + 1 = sal2.employee_id;
+
+-- Joining multiple table together
+select *
+from employee_demographics as dem
+join employee_salary as sal
+	on dem.employee_id = sal.employee_id;
+    
+select *
+from parks_departments;
+
+select *
+from employee_demographics as dem
+join employee_salary as sal
+	on dem.employee_id = sal.employee_id
+right join parks_departments as par
+	on sal.dept_id = par.department_id;
