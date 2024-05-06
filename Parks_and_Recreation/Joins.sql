@@ -45,8 +45,22 @@ from parks_and_recreation.employee_demographics as dem
 right Join parks_and_recreation.employee_salary as sal
 	on dem.employee_id = sal.employee_id;
     
--- full outer join
+/* full outer join
 select * 
 from parks_and_recreation.employee_demographics as dem
 Full outer join parks_and_recreation.employee_salary as sal
-	on dem.employee_id = sal.employee_id;
+	on dem.employee_id = sal.employee_id; 
+    ## this is not supported by MySql,it does not explicitly support a FULL OUTER JOIN. 
+    Instead, we can achieve it by combining a LEFT JOIN, a RIGHT JOIN, and a UNION operator.
+    MS SQL table and an Oracle table are able to use the full outer join*/
+
+-- Example
+SELECT * 
+FROM employee_demographics t1
+LEFT JOIN employee_salary t2 
+	ON t1.employee_id = t2.employee_id
+UNION
+SELECT * 
+FROM employee_demographics t1
+RIGHT JOIN employee_salary t2 
+	ON t1.employee_id = t2.employee_id;
